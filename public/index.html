@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./styles/admin-panel.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="header">
+            <h1>
+                Admin Panel
+            </h1>
+        </div>
+
+        <div>
+            <h2>
+                Course Management
+            </h2>
+
+            <div class="courses-container">
+                <h3>
+                    Courses List
+                </h3>
+                <ul id="courses-list">
+                </ul>
+            </div>
+
+            <div class="new-course-container">
+                <h3>
+                    Create New Course
+                </h3>
+                <div>
+                    <p>
+                        Title
+                    </p>    
+                    <input id="course-title-input" type="text" />
+                </div>
+
+                <div>
+                    <p>
+                        Description
+                    </p>    
+                    <input id="course-description-input" type="text" />
+                </div>
+
+                <button id="add-course-btn">
+                    Add Course
+                </button>
+            </div>
+        </div>
+        <div id="video-management">
+            <h2>
+                Video Management
+            </h2>
+
+            <div class="videos-container">
+                <h3>
+                    Videos List
+                </h3>
+                <ul id="videos-list">
+                </ul>
+            </div>
+
+            <div class="new-video-container">
+                <h3>
+                    Create New Video
+                </h3>
+                <div>
+                    <p>
+                        Course
+                    </p>
+                    <select id="select-course"></select>
+
+                </div>
+
+                <div>
+                    <p>
+                        Title
+                    </p>    
+                    <input id="video-title-input" type="text" />
+                </div>
+
+                <div>
+                    <p>
+                        Description
+                    </p>    
+                    <input id="video-description-input" type="text" />
+                </div>
+
+                <div>
+                    <p>
+                        Video ID
+                    </p>    
+                    <input id="video-id-input" type="text" />
+                </div>
+
+                <button id="add-video-btn">
+                    Add Video
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/init.js"></script>
+    <script src="./scripts/newEntitiesHandler.js"></script>
+</body>
+</html>

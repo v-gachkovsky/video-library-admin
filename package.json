@@ -1,0 +1,15 @@
+{
+  "name": "video-library-admin",
+  "version": "1.0.0",
+  "description": "Video Library Admin",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vladimir Gachkovsky <v.gachkovsky@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
