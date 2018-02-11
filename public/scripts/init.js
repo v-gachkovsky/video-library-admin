@@ -26,9 +26,21 @@
     }).catch(err => {
       console.log('error', err);
     });
-  }  
+  }
+
+  function fetchVideosOfCourse(courseId) {
+    axios.get(`${API}/videos/${courseId}`).then(({ data }) => {
+      const videosList = document.getElementById('videos-list');
+
+      fillList(videosList, data.videos);
+    }).catch(error => {
+      console.log('error', error);
+    });
+  }
 
   function fillList(list, entities) {
+    list.innerHTML = '';
+    
     entities.forEach(entity => {
       const listItem = document.createElement('li');
 
@@ -39,13 +51,20 @@
 
   function fillCourseSelect(courses) {
     const select = document.getElementById('select-course');
+    const selectorForFetchVideos = document.getElementById('select-course-videos');
 
     courses.forEach(course => {
       const option = document.createElement('option');
       option.innerHTML = course.title;
       option.value = course.id;
 
+      const clone = option.cloneNode(true);
       select.appendChild(option);
+      selectorForFetchVideos.appendChild(clone);
+    });
+
+    selectorForFetchVideos.addEventListener('change', () => {
+      fetchVideosOfCourse(selectorForFetchVideos.value);
     });
   }
 
