@@ -1,14 +1,18 @@
 (function() {
   const API = 'http://localhost:9000/api'
+  const selectorForFetchVideos = document.getElementById('select-course-videos');
   
   function fetchCourses() {
     axios.get(`${API}/courses`).then(({ data: courses }) => {
-      console.log('courses', courses);
       const coursesList = document.getElementById('courses-list');
+      coursesList.innerHTML = '';
 
       if (courses.length) {
         fillList(coursesList, courses);
         fillCourseSelect(courses);
+
+        const courseId = selectorForFetchVideos.firstChild.value;
+        fetchVideosOfCourse(courseId);
       } else {
         hideVideoManagement();
       }
@@ -17,22 +21,12 @@
     });
   }
 
-  function fetchVideos() {
-    axios.get(`${API}/videos`).then(({ data: videos }) => {
-      console.log('videos', videos);
+  function fetchVideosOfCourse(courseId) {
+    axios.get(`${API}/videos/${courseId}`).then(({ data: { videos } }) => {
       const videosList = document.getElementById('videos-list');
+      videosList.innerHTML = '';
 
       fillList(videosList, videos);
-    }).catch(err => {
-      console.log('error', err);
-    });
-  }
-
-  function fetchVideosOfCourse(courseId) {
-    axios.get(`${API}/videos/${courseId}`).then(({ data }) => {
-      const videosList = document.getElementById('videos-list');
-
-      fillList(videosList, data.videos);
     }).catch(error => {
       console.log('error', error);
     });
@@ -52,21 +46,23 @@
       list.appendChild(listItem);
 
       deleteIcon.addEventListener('click', () => {
-        const linkToDelete = entity.courseId
+        const isVideo = !!entity.courseId
+        const linkToDelete = isVideo
           ? `${API}/videos/${entity.id}` 
           : `${API}/courses/${entity.id}`;
 
         axios.delete(linkToDelete).then(() => {
-          location.reload();
-        });
+          fetchCourses();
+        }).catch(error => console.log(error));
       });
     });
   }
 
   function fillCourseSelect(courses) {
     const select = document.getElementById('select-course');
-    const selectorForFetchVideos = document.getElementById('select-course-videos');
 
+    selectorForFetchVideos.innerHTML = '';
+    select.innerHTML = '';
     courses.forEach(course => {
       const option = document.createElement('option');
       option.innerHTML = course.title;
@@ -88,7 +84,6 @@
   }
 
   function init() {
-    fetchVideos();
     fetchCourses();
   }
 
