@@ -51,6 +51,10 @@
           ? `${API}/videos/${entity.id}` 
           : `${API}/courses/${entity.id}`;
 
+        const answer = confirm('Вы действительно хотите удалить это?');
+
+        if (!answer) return;
+
         axios.delete(linkToDelete).then(() => {
           fetchCourses();
         }).catch(error => console.log(error));
