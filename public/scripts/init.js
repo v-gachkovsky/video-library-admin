@@ -43,9 +43,23 @@
     
     entities.forEach(entity => {
       const listItem = document.createElement('li');
+      const deleteIcon = document.createElement('i');
 
-      listItem.innerHTML = entity.title;
+      deleteIcon.className = 'fa fa-trash delete-btn';
+      
+      listItem.innerHTML = `${entity.title} `;
+      listItem.appendChild(deleteIcon);
       list.appendChild(listItem);
+
+      deleteIcon.addEventListener('click', () => {
+        const linkToDelete = entity.courseId
+          ? `${API}/videos/${entity.id}` 
+          : `${API}/courses/${entity.id}`;
+
+        axios.delete(linkToDelete).then(() => {
+          location.reload();
+        });
+      });
     });
   }
 
