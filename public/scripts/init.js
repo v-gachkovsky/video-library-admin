@@ -37,7 +37,7 @@
     
     entities.forEach(entity => {
       const listItem = document.createElement('li');
-      const deleteIcon = document.createElement('i');
+      const deleteIcon = document.createElement('span');
 
       deleteIcon.className = 'fa fa-trash delete-btn';
       

@@ -8,21 +8,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
 </head>
 <body>
+    <div class="header">
+        <h1>Административная панель</h1>
+    </div>
     <div class="admin-container">
-        <div class="header">
-            <h1>
-                Admin Panel
-            </h1>
-        </div>
-
-        <div>
+        <div class="styles-for-two-containers">
             <h2>
-                Course Management
+                Курсы
             </h2>
 
             <div class="courses-container">
                 <h3>
-                    Courses List
+                    Список курсов
                 </h3>
                 <div class="content-container">
                     <ul id="courses-list"></ul>
@@ -31,35 +28,35 @@
 
             <div class="new-course-container">
                 <h3>
-                    Create New Course
+                    Создать новый курс
                 </h3>
                 <div>
                     <p>
-                        Title
+                        Название
                     </p>    
                     <input id="course-title-input" type="text" />
                 </div>
 
                 <div>
                     <p>
-                        Description
+                        Описание
                     </p>    
                     <input id="course-description-input" type="text" />
                 </div>
 
                 <button id="add-course-btn">
-                    Add Course
+                    Добавить курс
                 </button>
             </div>
         </div>
-        <div id="video-management">
+        <div id="video-management" class="styles-for-two-containers">
             <h2>
-                Video Management
+                Видео
             </h2>
 
             <div class="videos-container">
                 <h3>
-                    Videos List <select id="select-course-videos"></select>
+                    Списко видео <select id="select-course-videos"></select>
                 </h3>
                 <div class="content-container">
                     <ul id="videos-list"></ul>
@@ -69,11 +66,11 @@
 
             <div class="new-video-container">
                 <h3>
-                    Create New Video
+                    Добавить видео
                 </h3>
                 <div>
                     <p>
-                        Course
+                        Курс
                     </p>
                     <select id="select-course"></select>
 
@@ -81,27 +78,27 @@
 
                 <div>
                     <p>
-                        Title
+                        Название
                     </p>    
                     <input id="video-title-input" type="text" />
                 </div>
 
                 <div>
                     <p>
-                        Description
+                        Описание
                     </p>    
                     <input id="video-description-input" type="text" />
                 </div>
 
                 <div>
                     <p>
-                        Video ID
+                        Видео ID
                     </p>    
                     <input id="video-id-input" type="text" />
                 </div>
 
                 <button id="add-video-btn">
-                    Add Video
+                    Добавить видео
                 </button>
             </div>
         </div>
