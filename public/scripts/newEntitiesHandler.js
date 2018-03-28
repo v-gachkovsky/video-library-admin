@@ -1,5 +1,5 @@
 (function() {
-  const API = 'http://localhost:9000/api'
+  const API = 'http://localhost:9000/api';
 
   function createVideo() {
     const title = document.getElementById('video-title-input').value;

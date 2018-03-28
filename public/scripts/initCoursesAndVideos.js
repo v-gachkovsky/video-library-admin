@@ -1,9 +1,9 @@
 (function() {
-  const API = 'http://localhost:9000/api'
+  const API = 'http://localhost:9000/api';
   const selectorForFetchVideos = document.getElementById('select-course-videos');
-  
+
   function fetchCourses() {
-    axios.get(`${API}/courses`).then(({ data: courses }) => {
+    axios.get(`${API}/all-courses`).then(({ data: courses }) => {
       const coursesList = document.getElementById('courses-list');
       coursesList.innerHTML = '';
 
@@ -34,13 +34,13 @@
 
   function fillList(list, entities) {
     list.innerHTML = '';
-    
+
     entities.forEach(entity => {
       const listItem = document.createElement('li');
       const deleteIcon = document.createElement('span');
 
       deleteIcon.className = 'fa fa-trash delete-btn';
-      
+
       listItem.innerHTML = `${entity.title} `;
       listItem.appendChild(deleteIcon);
       list.appendChild(listItem);
@@ -48,7 +48,7 @@
       deleteIcon.addEventListener('click', () => {
         const isVideo = !!entity.courseId
         const linkToDelete = isVideo
-          ? `${API}/videos/${entity.id}` 
+          ? `${API}/videos/${entity.id}`
           : `${API}/courses/${entity.id}`;
 
         const answer = confirm('Вы действительно хотите удалить это?');
@@ -92,5 +92,4 @@
   }
 
   init();
-
 })();

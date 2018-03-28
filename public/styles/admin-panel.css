@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Stamper";  
+  font-family: "Stamper";
   src: url("../fonts/Stamper.ttf") format("truetype");
 }
 
@@ -92,11 +92,16 @@ ul li {
   border: 1px solid rgb(227,98,0);
   border-radius: 3px;
   margin: 4px 5px;
-  list-style: none;  
+  list-style: none;
   padding: 3px;
   overflow: hidden;
-  height: 15px;
+  height: 35px;
   line-height: 15px;
+  cursor: pointer;
+}
+
+.active-user {
+  background-color: red;
 }
 
 li span {

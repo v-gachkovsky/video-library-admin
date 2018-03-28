@@ -11,100 +11,31 @@
     <div class="header">
         <h1>Административная панель</h1>
     </div>
+
+    <div>
+        <a href="./courses-and-videos.html">Курсы и видео</a>
+    </div>
     <div class="admin-container">
         <div class="styles-for-two-containers">
+            <h2>
+                Пользователи
+            </h2>
+
+            <div class="users-container">
+                <ul id="users-list"></ul>
+            </div>
+        </div>
+        <div id="course-management" class="styles-for-two-containers">
             <h2>
                 Курсы
             </h2>
 
             <div class="courses-container">
-                <h3>
-                    Список курсов
-                </h3>
-                <div class="content-container">
-                    <ul id="courses-list"></ul>
-                </div>
-            </div>
-
-            <div class="new-course-container">
-                <h3>
-                    Создать новый курс
-                </h3>
-                <div>
-                    <p>
-                        Название
-                    </p>    
-                    <input id="course-title-input" type="text" />
-                </div>
-
-                <div>
-                    <p>
-                        Описание
-                    </p>    
-                    <input id="course-description-input" type="text" />
-                </div>
-
-                <button id="add-course-btn">
-                    Добавить курс
-                </button>
-            </div>
-        </div>
-        <div id="video-management" class="styles-for-two-containers">
-            <h2>
-                Видео
-            </h2>
-
-            <div class="videos-container">
-                <h3>
-                    Списко видео <select id="select-course-videos"></select>
-                </h3>
-                <div class="content-container">
-                    <ul id="videos-list"></ul>
-                </div>
-                
-            </div>
-
-            <div class="new-video-container">
-                <h3>
-                    Добавить видео
-                </h3>
-                <div>
-                    <p>
-                        Курс
-                    </p>
-                    <select id="select-course"></select>
-
-                </div>
-
-                <div>
-                    <p>
-                        Название
-                    </p>    
-                    <input id="video-title-input" type="text" />
-                </div>
-
-                <div>
-                    <p>
-                        Описание
-                    </p>    
-                    <input id="video-description-input" type="text" />
-                </div>
-
-                <div>
-                    <p>
-                        Видео ID
-                    </p>    
-                    <input id="video-id-input" type="text" />
-                </div>
-
-                <button id="add-video-btn">
-                    Добавить видео
-                </button>
+                <ul id="courses-list"></ul>
             </div>
         </div>
     </div>
 
-    <script src="./scripts/init.js"></script>
-    <script src="./scripts/newEntitiesHandler.js"></script>
+    <script src="scripts/initUsersAndCourses.js"></script>
 </body>
 </html>
