@@ -110,3 +110,21 @@ li span {
   z-index: 99999;
   right: 2px;
 }
+
+.replace-container {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.replace {
+  margin-left: 100px;
+  height: 70px;
+  width: 100px;
+  border-radius: 30px;
+  margin-bottom: 3px;
+  background-color: beige;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(0,0,0,0.7);
+  box-shadow: 0px 0px 90px 10px rgba(204,0,0,0.75);
+}
